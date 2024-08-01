@@ -1,6 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./Utils/generateMarkDown.js'); // Require the generateMarkdown module
+const path = require
+const generateMarkdown = require('./utils/generateMarkDown.js');
 
 // Array of questions for user input
 const questions = [
