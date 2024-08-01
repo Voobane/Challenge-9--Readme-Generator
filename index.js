@@ -8,7 +8,7 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'What is the title of your project?',
+        message: 'Provide name for your project.',
     },
     {
         type: 'input',
@@ -56,16 +56,15 @@ const questions = [
 // Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
-        err ? console.error(err) : console.log('README.md created successfully!')
+        err ? console.error(err) : console.log('Professional README.md created successfully!')
     );
 }
 
 // Function to initialize app
 function init() {
-    inquirer.prompt(questions)
-        .then((answers) => {
+    inquirer.prompt(questions).then((answers) => {
             const markdown = generateMarkdown(answers); // Generate markdown using the user's answers
-            writeToFile('README.md', markdown); // Write the generated markdown to a README.md file
+            writeToFile('./README.md', markdown); // Write the generated markdown to a README.md file
         });
 }
 
